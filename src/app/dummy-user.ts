@@ -36,37 +36,37 @@ export const DUMMY_USERS = [
 
 
   {
-      id:"us1",
+      id:"u1",
       name:"saitheja",
       designation:"jr web dev",
-      Avatar: "./user-1.jpg"
+      avatar: "user-1.jpg"
   },
   {
-      id:"us2",
+      id:"u2",
       name:"pavan",
       designation:"jr web dev",
-        Avatar: "./user-2.jpg"
+        avatar: "user-2.jpg"
   },{
-              id: "us3",
-      name:"saitheja",
+              id: "u3",
+      name:"Ravindran",
       designation:" web dev",
-        Avatar: "./user-3.jpg"
+        avatar: "user-3.jpg"
   },
   {
-    id:"us-4",
+    id:"u4",
     name:"Ramgopal",
     designation:"Electrician",
-    Avatar: "user-4.jpg"
+    avatar: "user-4.jpg"
 },
 {
-    id:"us-5",
+    id:"u5",
     name:"Anil",
     designation:"Manager",
-      Avatar: "user-5.jpg"
+      avatar: "user-5.jpg"
 },{
-            id: "us-6",
+            id: "u6",
              name:"Anandh",
     designation:" bwrs",
-      Avatar: "user-6.jpg"
+      avatar: "user-6.jpg"
 }
 ]
