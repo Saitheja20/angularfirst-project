@@ -1,17 +1,21 @@
 import { Component , Input } from '@angular/core';
 import {DUMMY_USERS} from "../app/dummy-user";
 import { TaskComponent } from "../app/tasks/task/task.component";
+import { NewTaskComponent } from "../app/tasks/new-task/new-task.component";
+import { NewTask } from '../app/tasks/task/task.model';
 @Component({
     selector: 'app-tasks',
     standalone: true,
     templateUrl: './tasks.component.html',
     styleUrl: './tasks.component.css',
-    imports: [TaskComponent]
+    imports: [TaskComponent, NewTaskComponent]
 })
 export class TasksComponent {
+
   @Input({required:true}) userId!:string;
   @Input({required:true}) name!:string;
   // userId?:string;
+  isAddingTask=false;
  tasks = [
   {
     id: 't1',
@@ -43,8 +47,29 @@ get selectedUserTask(){
   return this.tasks.filter((task)=> task.userId === this.userId);
 }
 
+onCompleteTask(id: string) {
+  this.tasks=this.tasks.filter((task)=>task.id!==id);
+  }
 
+  onStartAddTask(){
+this.isAddingTask=true;
+  }
 
+  onCancelAddTask(){
+    this.isAddingTask=false;
+  }
+  onAddTask(taskData: NewTask){
+
+    //instead of unshift if we use push so it will push to list back word
+this.tasks.unshift({
+  id: new Date().getTime().toString(),
+  userId: this.userId,
+  title: taskData.title,
+  summary: taskData.summary,
+  dueDate: taskData.date,
+})
+this.isAddingTask=false;
+  }
 // user=DUMMY_USERS;
 // onClick(name:string){
 //     console.log("this user name is"+name);

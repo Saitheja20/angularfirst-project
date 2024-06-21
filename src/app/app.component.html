@@ -7,20 +7,20 @@
   <ul id="user">
     <!-- we can write by using NgFor below -->
     <!-- <li *ngFor="let find of user">
-      <app-user 
+      <app-user
       [user]="find"
        (select)="onSelectUser($event)" />
     </li> -->
     @for(find of user;track find.id){
       <li>
-        <app-user 
-        [user]="find"
+        <app-user
+        [user]="find" [selected]="find.id === selectedUserId"
          (select)="onSelectUser($event)" />
       </li>
-    } 
-    <!-- <li><app-user 
+    }
+    <!-- <li><app-user
       [user]="user[0]"
-     
+
        (select)="onSelectUser($event)" />
     </li>
     <li><app-user  [user]="user[1]"

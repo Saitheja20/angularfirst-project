@@ -8,10 +8,10 @@
             <span>{{SelectedUser.designation}}</span> -->
     <!-- </button> -->
     <!--  -->
-<!-- </div> --> 
+<!-- </div> -->
 
 <div>
-    <button (click)="onSelectUser()">
+    <button [class.active]="selected" (click)="onSelectUser()">
             <!-- <img [src]="'../../assets/users/'+SelectedUser.Avatar" [alt]="SelectedUser.name"/> -->
            <!-- |||||||we can write the above code also it works fine|||[ariaChecked]="" -->
            <img [src]="imagePath" [alt]="user.name"/>
@@ -19,5 +19,5 @@
             <!-- <span>{{ SelectedUser.id}}</span>
             <span>{{SelectedUser.designation}}</span> -->
     </button>
-    
+
 </div>

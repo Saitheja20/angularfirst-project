@@ -24,14 +24,11 @@
 
 */
 import { Component, Input ,Output, EventEmitter,output, computed, input} from '@angular/core';
-import {DUMMY_USERS} from "../dummy-user"
+import {DUMMY_USERS} from "../dummy-user";
+import {user} from './user.model';
 const random = Math.floor(Math.random() * DUMMY_USERS.length);
 
-interface user{
-  id:string,
-  name:string;
-  avatar:string;
-}
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -44,15 +41,17 @@ export class UserComponent {
   // @Input({required:true}) avatar!: string;
   // @Input({required:true}) name!: string;
 // we can use above or below
-@Input({required:true}) user!:{
-id:string;
-name:string;
-avatar:string;
-}
-  
-  @Output() select = new EventEmitter<string>(); 
+@Input({required:true}) user!:user;
+@Input ({required:true}) selected!:boolean;
+// {
+// id:string;
+// name:string;
+// avatar:string;
+// }
 
-  // we can use output method using above or below 
+  @Output() select = new EventEmitter<string>();
+
+  // we can use output method using above or below
   // select =output<string>();
 
   // avatar = input.required<string>();
@@ -63,7 +62,7 @@ avatar:string;
   get imagePath(){
     return "../assets/users/"+this.user.avatar;
   }
-  
+
   onSelectUser(){
 
     this.select.emit(this.user.id);
