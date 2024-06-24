@@ -8,6 +8,7 @@ main {
   }
   li{
     list-style-type: none;
+    margin: 5px 0px;
   }
   #users {
     list-style: none;

@@ -1,9 +1,23 @@
-<div>
-    <button>
-            <img [src]="'../../assets/users/'+SelectedUser.Avatar" [alt]="SelectedUser.name"/>
-            <span>{{ SelectedUser.name}}</span>
+<!-- <div>
+    <button (click)="onSelectUser()">
+             <img [src]="'../../assets/users/'+SelectedUser.Avatar" [alt]="SelectedUser.name"/> -->
+           <!-- |||||||we can write the above code also it works fine|||[ariaChecked]="" -->
+           <!-- <img [src]="photosPath"  [alt]="SelectedUser.name"/> -->
+            <!-- <span>{{ SelectedUser.name}}</span> -->
+            <!-- <span>{{ SelectedUser.id}}</span>
+            <span>{{SelectedUser.designation}}</span> -->
+    <!-- </button> -->
+    <!--  -->
+<!-- </div> -->
+
+<app-card>
+    <button [class.active]="selected" (click)="onSelectUser()">
+            <!-- <img [src]="'../../assets/users/'+SelectedUser.Avatar" [alt]="SelectedUser.name"/> -->
+           <!-- |||||||we can write the above code also it works fine|||[ariaChecked]="" -->
+           <img [src]="imagePath" [alt]="user.name"/>
+            <span>{{user.name}}</span>
             <!-- <span>{{ SelectedUser.id}}</span>
             <span>{{SelectedUser.designation}}</span> -->
     </button>
-    
-</div>
+
+  </app-card>

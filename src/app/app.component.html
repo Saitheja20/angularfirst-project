@@ -2,12 +2,49 @@
 <app-user></app-user> -->
 
 <!-- |||||||||||||Or ||||| -->
-<app-header/>
+<app-header />
 <main>
-    <ul id="user">
-        <li> <app-user/></li>
-   
-</ul>
+  <ul id="user">
+    <!-- we can write by using NgFor below -->
+    <!-- <li *ngFor="let find of user">
+      <app-user
+      [user]="find"
+       (select)="onSelectUser($event)" />
+    </li> -->
+    @for(find of user;track find.id){
+      <li>
+        <app-user
+        [user]="find" [selected]="find.id === selectedUserId"
+         (select)="onSelectUser($event)" />
+      </li>
+    }
+    <!-- <li><app-user
+      [user]="user[0]"
+
+       (select)="onSelectUser($event)" />
+    </li>
+    <li><app-user  [user]="user[1]"
+       (select)="onSelectUser($event)" />
+    </li>
+    <li><app-user  [user]="user[2]"
+       (select)="onSelectUser($event)" />
+    </li>
+    <li><app-user  [user]="user[3]"
+       (select)="onSelectUser($event)" />
+    </li> -->
+  </ul>
+<!-- Ng if below -->
+
+<!-- <app-tasks *ngIf="selectedUser;else fallback" [name]="selectedUser!.name"/>
+<ng-template #fallback>
+<p id="fallback">Select a user to know there tasks</p>
+</ng-template> -->
+  @if(selectedUser){
+    <app-tasks [userId]="selectedUser.id"  [name]="selectedUser.name" [avatar]="selectedUser.avatar"/>
+  }@else {
+   <p id="fallback">Select any person to know there tasks</p>
+  }
+
 </main>
 
 <!-- <main>

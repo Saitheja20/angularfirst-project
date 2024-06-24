@@ -1,0 +1,23 @@
+<section id="tasks">
+  @if (isAddingTask) {
+    <app-new-task (cancel)="onCancelAddTask()" (add)="onAddTask($event)"/>
+  }
+<header>
+
+    <h2> {{name}}<span class="imgs"><img [src]="'../assets/users/'+avatar" alt="" width="20px" height="auto"></span></h2>
+
+    <menu>
+        <button (click)="onStartAddTask()">Add Task</button>
+    </menu>
+</header>
+<ul>
+    @for(display of selectedUserTask;track display.id){
+        <li>
+            <app-task [task]="display" (complete)="onCompleteTask($event)"/>
+            </li>
+    }
+</ul>
+</section>
+
+
+
