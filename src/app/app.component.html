@@ -40,7 +40,7 @@
 <p id="fallback">Select a user to know there tasks</p>
 </ng-template> -->
   @if(selectedUser){
-    <app-tasks [userId]="selectedUser.id"  [name]="selectedUser.name"/>
+    <app-tasks [userId]="selectedUser.id"  [name]="selectedUser.name" [avatar]="selectedUser.avatar"/>
   }@else {
    <p id="fallback">Select any person to know there tasks</p>
   }

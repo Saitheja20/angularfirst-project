@@ -14,6 +14,7 @@ export class TasksComponent {
 
   @Input({required:true}) userId!:string;
   @Input({required:true}) name!:string;
+  @Input({required:true}) avatar!:string;
   // userId?:string;
   isAddingTask=false;
  tasks = [

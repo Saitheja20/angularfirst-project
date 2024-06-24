@@ -5,7 +5,7 @@
     overflow: auto;
     background-color: #3a2c54;
   }
-  
+
   header {
     display: flex;
     justify-content: space-between;
@@ -13,19 +13,23 @@
     margin-bottom: 2rem;
     gap: 1rem;
   }
-  
+
   h2 {
     margin: 0;
+    padding-bottom: 20px;
     font-size: 0.9rem;
     width: 60%;
     text-wrap: balance;
   }
-  
+  imgs{
+  /* margin */
+}
+
   menu {
     margin: 0;
     padding: 0;
   }
-  
+
   menu button {
     font: inherit;
     cursor: pointer;
@@ -35,12 +39,12 @@
     padding: 0.35rem 0.8rem;
     font-size: 0.9rem;
   }
-  
+
   menu button:hover,
   menu button:active {
     background-color: #a565dd
   }
-  
+
   ul {
     list-style: none;
     margin: 1rem 0;
@@ -51,12 +55,12 @@
     max-height: 50vh;
     overflow: auto;
   }
-  
+
   @media (min-width: 768px) {
     h2 {
       font-size: 1.25rem;
     }
-  
+
     menu {
       width: auto;
     }
